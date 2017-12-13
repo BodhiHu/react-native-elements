@@ -6,3 +6,5 @@ coverage
 jsconfig.json
 .vscode/
 website/build
+build/
+package-lock.json

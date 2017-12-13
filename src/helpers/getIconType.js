@@ -1,15 +1,3 @@
-import ZocialIcon from 'react-native-vector-icons/Zocial';
-import OcticonIcon from 'react-native-vector-icons/Octicons';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicon from 'react-native-vector-icons/Ionicons';
-import FoundationIcon from 'react-native-vector-icons/Foundation';
-import EvilIcon from 'react-native-vector-icons/EvilIcons';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
-import FAIcon from 'react-native-vector-icons/FontAwesome';
-import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-
 const customIcons = {};
 
 export const registerCustomIconType = (id, customIcon) => {
@@ -19,27 +7,27 @@ export const registerCustomIconType = (id, customIcon) => {
 export default type => {
   switch (type) {
     case 'zocial':
-      return ZocialIcon;
+      return require('react-native-vector-icons/Zocial');
     case 'octicon':
-      return OcticonIcon;
+      return require('react-native-vector-icons/Octicons');
     case 'material':
-      return MaterialIcon;
+      return require('react-native-vector-icons/MaterialIcons');
     case 'material-community':
-      return MaterialCommunityIcon;
+      return require('react-native-vector-icons/MaterialCommunityIcons');
     case 'ionicon':
-      return Ionicon;
+      return require('react-native-vector-icons/Ionicons');
     case 'foundation':
-      return FoundationIcon;
+      return require('react-native-vector-icons/Foundation');
     case 'evilicon':
-      return EvilIcon;
+      return require('react-native-vector-icons/EvilIcons');
     case 'entypo':
-      return EntypoIcon;
+      return require('react-native-vector-icons/Entypo');
     case 'font-awesome':
-      return FAIcon;
+      return require('react-native-vector-icons/FontAwesome');
     case 'simple-line-icon':
-      return SimpleLineIcon;
+      return require('react-native-vector-icons/SimpleLineIcons');
     case 'feather':
-      return FeatherIcon;
+      return require('react-native-vector-icons/Feather');
     default:
       if (customIcons.hasOwnProperty(type)) {
         return customIcons[type];
