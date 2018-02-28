@@ -31,7 +31,7 @@ import PricingCard from './pricing/PricingCard';
 
 // helpers
 import Text from './text/Text';
-import colors from './config/colors';
+import { colors, fonts, setTheme, getTheme } from './config';
 import getIconType, { registerCustomIconType } from './helpers/getIconType';
 import normalize from './helpers/normalizeText';
 
@@ -50,7 +50,7 @@ export {
   CheckBox,
   SearchBar,
   Icon,
-  colors,
+  colors, fonts, setTheme, getTheme,
   getIconType,
   registerCustomIconType,
   normalize,

@@ -1,4 +1,4 @@
-export default {
+let colors =  {
   primary: '#2089dc',
   primary1: '#4d86f7',
   primary2: '#6296f9',
@@ -13,3 +13,13 @@ export default {
   searchBg: '#303337',
   error: '#ff190c',
 };
+
+export function setColors (newColors) {
+  return colors = {
+    ...colors,
+    ...newColors
+  }
+}
+
+export default colors
+

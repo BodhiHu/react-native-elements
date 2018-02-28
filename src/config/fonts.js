@@ -1,4 +1,4 @@
-export default {
+let fonts = {
   ios: {},
   android: {
     regular: {
@@ -32,3 +32,13 @@ export default {
     },
   },
 };
+
+export function setFonts (newFonts) {
+  return fonts = {
+    ...fonts,
+    ...newFonts
+  }
+}
+
+export default fonts
+
