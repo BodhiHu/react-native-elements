@@ -34,6 +34,7 @@ class Button extends Component {
 
   render() {
     const {
+      enabled,
       ViewComponent,
       TouchableComponent,
       containerStyle,
@@ -53,12 +54,18 @@ class Button extends Component {
       ...attributes
     } = this.props;
 
+    const _onPress = function() {
+      enabled && onPress && onPress()
+    }
+    const touchableCompProps = TouchableComponent == TouchableNativeFeedback ?
+      { underlayColor: (clear ? 'transparent' : undefined) } : { /**/ }
+
     return (
       <View style={[styles.container, containerStyle]}>
         <TouchableComponent
-          onPress={onPress}
-          underlayColor={clear ? 'transparent' : undefined}
-          activeOpacity={clear ? 0 : undefined}
+          onPress={_onPress}
+          {...touchableCompProps}
+          activeOpacity={(clear || !enabled) ? 0 : undefined}
           style={{
             borderRadius: buttonStyle.borderRadius,
           }}
@@ -109,6 +116,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
+  enabled: PropTypes.bool,
   text: PropTypes.string,
   textStyle: Text.propTypes.style,
   textProps: PropTypes.object,
@@ -128,6 +136,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  enabled: true,
   text: 'Welcome to\nReact Native Elements',
   iconRight: false,
   TouchableComponent:
