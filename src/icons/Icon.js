@@ -36,7 +36,7 @@ const Icon = props => {
   }
   let Icon;
   if (!type) {
-    Icon = getIconType('material');
+    Icon = getIconType('ionicon');
   } else {
     Icon = getIconType(type);
   }

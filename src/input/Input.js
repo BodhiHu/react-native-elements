@@ -70,7 +70,7 @@ class Input extends Component {
         <Animated.View
           style={[
             styles.container,
-            { width: SCREEN_WIDTH - 100, height: 40 },
+            { width: '100%', height: 40 },
             containerStyle,
             { transform: [{ translateX }] },
           ]}
