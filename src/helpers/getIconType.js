@@ -32,6 +32,6 @@ export default type => {
       if (customIcons.hasOwnProperty(type)) {
         return customIcons[type];
       }
-      return MaterialIcon;
+      return require('react-native-vector-icons/MaterialIcons').default;
   }
 };
