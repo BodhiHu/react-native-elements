@@ -34,16 +34,23 @@ const Icon = props => {
   if (component) {
     Component = component;
   }
+
   let Icon;
   if (!type) {
     Icon = getIconType('ionicon');
   } else {
     Icon = getIconType(type);
   }
+
+  let containerProps = {};
+  if (Component == TouchableHighlight) {
+    containerProps.underlayColor = (reverse ? color : underlayColor || color);
+    containerProps.onPress = onPress;
+  }
+
   return (
     <Component
-      {...attributes}
-      underlayColor={reverse ? color : underlayColor || color}
+      {...containerProps}
       style={[
         (reverse || raised) && styles.button,
         (reverse || raised) && {
@@ -59,7 +66,7 @@ const Icon = props => {
         },
         containerStyle && containerStyle,
       ]}
-      onPress={onPress}
+      {...attributes}
     >
       <Icon
         style={[{ backgroundColor: 'transparent' }, iconStyle && iconStyle]}

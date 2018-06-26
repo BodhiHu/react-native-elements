@@ -79,7 +79,7 @@ class Input extends Component {
             <View
               style={[
                 styles.iconContainer,
-                { marginLeft: 15 },
+                { marginLeft: 5 },
                 leftIconContainerStyle,
               ]}
             >
@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconContainer: {
+    width: 18,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
