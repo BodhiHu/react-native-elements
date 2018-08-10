@@ -65,7 +65,7 @@ class Button extends Component {
         <TouchableComponent
           onPress={_onPress}
           {...touchableCompProps}
-          activeOpacity={(clear || !enabled) ? 0 : undefined}
+          activeOpacity={(clear || !enabled) ? 1 : undefined}
           style={{
             borderRadius: buttonStyle.borderRadius,
           }}
@@ -78,6 +78,7 @@ class Button extends Component {
               clear && { backgroundColor: 'transparent', elevation: 0 },
               buttonStyle,
               linearGradientProps && { backgroundColor: 'transparent' },
+              !enabled && { backgroundColor: 'lightgray'}
             ]}
           >
             {loading && (
