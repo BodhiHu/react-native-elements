@@ -55,6 +55,7 @@ class Input extends Component {
       rightIcon,
       rightIconContainerStyle,
       inputStyle,
+      underline,
       displayError,
       errorStyle,
       errorMessage,
@@ -72,6 +73,7 @@ class Input extends Component {
             styles.container,
             { width: '100%', height: 40 },
             containerStyle,
+            underline && styles.underline,
             { transform: [{ translateX }] },
           ]}
         >
@@ -114,6 +116,7 @@ class Input extends Component {
 
 Input.propTypes = {
   containerStyle: ViewPropTypes.style,
+  underline: PropTypes.bool,
 
   leftIcon: PropTypes.node,
   leftIconContainerStyle: ViewPropTypes.style,
@@ -128,10 +131,15 @@ Input.propTypes = {
   errorStyle: Text.propTypes.style,
   errorMessage: PropTypes.string,
 };
+Input.defaultProps = {
+  underline: true
+};
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'row'
+  },
+  underline: {
     borderBottomWidth: 1,
     borderColor: 'rgba(171, 189, 219, 1)',
     alignItems: 'center',
